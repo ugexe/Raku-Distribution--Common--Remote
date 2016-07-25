@@ -10,7 +10,7 @@ See L<Distribution::Common|https://github.com/ugexe/Perl6-Distribution--Common> 
 This is kept as a separate repo as it requires additional dependencies.
 
 =for HTML <a href="https://travis-ci.org/ugexe/Perl6-Distribution--Common--Remote"><img src="https://travis-ci.org/ugexe/Perl6-Distribution--Common--Remote.svg?branch=master"></a>
-          <a href="https://ci.appveyor.com/project/ugexe/perl6-distribution-common-remote/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/ugexe/Perl6-Distribution--Common--Remote?branch=master&passingText=Windows%20-%20OK&failingText=Windows%20-%20FAIL&pendingText=Windows%20-%20pending&svg=true"></a>
+          <a href="https://ci.appveyor.com/project/ugexe/Perl6-Distribution-Common-Remote/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/ugexe/Perl6-Distribution--Common--Remote?branch=master&passingText=Windows%20-%20OK&failingText=Windows%20-%20FAIL&pendingText=Windows%20-%20pending&svg=true"></a>
 
 =head3 Synopsis
 

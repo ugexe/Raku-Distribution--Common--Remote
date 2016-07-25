@@ -5,17 +5,16 @@ os:
     - osx
 
 env:
-    - BACKEND=moar
-    - BACKEND=jvm
+    global:
+        - secure: O3P/+5aFKM9pRzsZhRgjTC2Uq2GDwQcJ8ZevuC5nX4dIEnZLHEOROMdvVacvNbH8BmWSD0maK0NeuBnjBiXBV9n+KaIiIYxOCZiORY/3wr32U4bNURIOV2um9i3dY90Y/FPqU3MVF4ZZKzqgHv5k+D4pc9e7fYeGZBC8bFvDLOZU1rL6k8+kbJSNGQ+pQxBJ6V8N003IRQ+bDlAFQcaIgE0XyWSTQY1j7N+ryRLdaFmt5c6BGZ2aJAvMyLA/u73HKEhhFcVTLU8u8NIBJwJPPiZ1FDU6lNn/AO0eTRLEvPVf8w6utV3VCQCl4TCrynXrzI6zha5JfI0q4buS4goRxSUaLigQLU5YqgrzP5kj4t0yFXtkzX2YxU1iVjg7/O4fFhLs50HDye23lTkdzFzcItHpd0xodaON7n4neEbL66T6X23cz69uR8Arbmzuk7qwZNR7dTq5Kv8vaCLAqTt/6LXu88r+oCUq3aTBgDth46vsTyv2xTqpgP8Xd6gpwCnATFdbImGZUVxEUBdk+J/lJiUNChtWPK8BBUTvoNw66zc0VnRL99fCkcRmOQkZiYqClADrhrznurejUDo3+IT0h7wC33L5u0N0IuLH/trABphQvH6PUAGI22k1kFb7/LHYiT+95KTEfsobShvH9EcpGBmhorIx1x1SQHG5BGgFGgU=
+    matrix:
+        - BACKEND=moar
+        - BACKEND=jvm
 
 matrix:
     allow_failures:
         - env: BACKEND=jvm
     fast_finish: true
-
-deploy:
-  GITHUB_ACCESS_TOKEN:
-    secure: 0yZL4wvxQRmf8+2+TAsMbd1zhe+nIiyJ/QCaNhq/ZAFjyZ4InfEf0r8KgqV4TV4kS+pZfhp+v31IlahYzkpmGE+s2OyLmoouIktcnAarva3bLFxl5dxa1WeqndN0gkzEzMGb7T2Sg7qDFrAI2D21h2qynyN5EHO2EIwRudbd+5R4uv/O9Zd5rohPVcd9AfezWWq0wpuHDwwcM3MNNa/sk9zBuFvAF7T51F1Yai2WmYYXULS1jOeO45lk2VltL9tpX9TZsroQORGGwP6KAG/LScUGq/kPn0vRkZDwGu5Ioo9cWggIJEXsGbNJLu5AxbIQmnywzTvs39YJkjCWBB7xk/mOv+YwE/v875Rju38Bh/ie9UnSapcz9Qkw0Q8R58VoD6A7d3T6klD/oeNQSRpEIh51fRzxVbsw43rn2jhbQ/Y/5LjvFUbnd/U3TQ1K7mMiO+FhLR4fvIBKDzN86HuO17ZAb1V9pXJDpHDDiw+WACobJ+xSVJ3aux7GjlrAzni+jHrfEUyxmDZpwTejzU9Fa5zsPg3RI2IKpu8a33wIU150Rg+xSgBwyjTRRG4XhC/xmpK/cDtFajVlqwspafWeVrP9Sgkn6A5IF31NCGPdUp2MwlYKM+hRBTmpjH2UKTI1RKcjeWqfxKr90438yXzCn07GP5/NlLiMJkg/mxvwgqg=
 
 sudo: false
 

@@ -8,7 +8,7 @@
     "description" : "Create an installable Distribution from common remote sources",
     "provides"    : {
         "Distribution::Common::Remote::Github" : "lib/Distribution/Common/Remote/Github.pm6",
-        "Distribution::IO::Remote::Github"     : "lib/Distribution/IO/Remote/Github.pm6",
+        "Distribution::IO::Remote::Github"     : "lib/Distribution/IO/Remote/Github.pm6"
     },
     "depends"     : [ "IO::Socket::SSL", "Net::HTTP", "Distribution::Common" ],
     "support"     : { "bugtracker" : "https://github.com/ugexe/Perl6-Distribution--Common--Remote/issues" },

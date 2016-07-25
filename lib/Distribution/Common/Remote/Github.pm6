@@ -8,7 +8,8 @@ class Distribution::Common::Remote::Github {
     has $.user;
     has $.repo;
     has $.branch;
+    has $.api-key;
 
     method new(|c) { self.bless(|c) }
-    submethod BUILD(:$!user, :$!repo, :$!branch = 'master') { }
+    submethod BUILD(:$!user, :$!repo, :$!branch = 'master', :$!api-key = %*ENV<GITHUB_ACCESS_TOKEN>) { }
 }

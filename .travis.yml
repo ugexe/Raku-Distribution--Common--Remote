@@ -2,7 +2,7 @@ language: perl
 
 os:
     - linux
-#    - osx
+    - osx
 
 env:
     - BACKEND=moar
@@ -12,6 +12,10 @@ matrix:
     allow_failures:
         - env: BACKEND=jvm
     fast_finish: true
+
+deploy:
+  GITHUB_ACCESS_TOKEN:
+    secure: 0yZL4wvxQRmf8+2+TAsMbd1zhe+nIiyJ/QCaNhq/ZAFjyZ4InfEf0r8KgqV4TV4kS+pZfhp+v31IlahYzkpmGE+s2OyLmoouIktcnAarva3bLFxl5dxa1WeqndN0gkzEzMGb7T2Sg7qDFrAI2D21h2qynyN5EHO2EIwRudbd+5R4uv/O9Zd5rohPVcd9AfezWWq0wpuHDwwcM3MNNa/sk9zBuFvAF7T51F1Yai2WmYYXULS1jOeO45lk2VltL9tpX9TZsroQORGGwP6KAG/LScUGq/kPn0vRkZDwGu5Ioo9cWggIJEXsGbNJLu5AxbIQmnywzTvs39YJkjCWBB7xk/mOv+YwE/v875Rju38Bh/ie9UnSapcz9Qkw0Q8R58VoD6A7d3T6klD/oeNQSRpEIh51fRzxVbsw43rn2jhbQ/Y/5LjvFUbnd/U3TQ1K7mMiO+FhLR4fvIBKDzN86HuO17ZAb1V9pXJDpHDDiw+WACobJ+xSVJ3aux7GjlrAzni+jHrfEUyxmDZpwTejzU9Fa5zsPg3RI2IKpu8a33wIU150Rg+xSgBwyjTRRG4XhC/xmpK/cDtFajVlqwspafWeVrP9Sgkn6A5IF31NCGPdUp2MwlYKM+hRBTmpjH2UKTI1RKcjeWqfxKr90438yXzCn07GP5/NlLiMJkg/mxvwgqg=
 
 sudo: false
 

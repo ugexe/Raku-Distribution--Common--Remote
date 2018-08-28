@@ -12,7 +12,15 @@ sub powershell-webrequest($uri) {
 sub curl($uri) {
     return Nil unless once { so try run('curl', '--help', :!out, :!err) };
     my $header = $API_TOKEN.chars ?? "Authorization: token {$API_TOKEN}" !! '';
-    my $content = run('curl', $header, '--max-time', 60, '-s', '-L', $uri, :out).out.slurp(:close);
+    my $proc = run('curl', $header, '--max-time', 60, '-s', '-L', $uri, :out, :err);
+    note "PROC:";
+    note $proc.perl;
+    my $content = $proc.out.slurp(:close);
+    my $err = $proc.err.slurp(:close);
+    note "ERROR:";
+    note $err;
+    note "CONTENT:";
+    note $content;
     return $content;
 }
 

@@ -33,4 +33,11 @@ install:
     - perl6 -I $HOME/zef $HOME/zef/bin/zef --deps-only install .
 
 script:
+    # Test it works loaded as a CURFS
     - prove -v -e 'perl6 -I.' t/
+
+    # Test it can install
+    - perl6 -I $HOME/zef $HOME/zef/bin/zef --/test install .
+
+    # Test it works loaded as a CURI
+    - prove -v -e perl6 t/

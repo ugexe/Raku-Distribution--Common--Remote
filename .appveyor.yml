@@ -17,15 +17,19 @@ install:
     - SET PATH=%APPVEYOR_BUILD_FOLDER%\..\rakudo\install\bin;%PATH%
     - SET PATH=%APPVEYOR_BUILD_FOLDER%\..\rakudo\install\share\perl6\site\bin;%PATH%
     - cd %APPVEYOR_BUILD_FOLDER%
+    - git clone https://github.com/ugexe/zef %APPVEYOR_BUILD_FOLDER%\..\zef
+    - perl6 -I %APPVEYOR_BUILD_FOLDER%\..\zef %APPVEYOR_BUILD_FOLDER%\..\zef\bin\zef --deps-only install .
 
 build: off
 
 test_script:
-    # Install dependency Distribution::Common
-    - git clone https://github.com/ugexe/zef %APPVEYOR_BUILD_FOLDER%\..\zef
-    - perl6 -I %APPVEYOR_BUILD_FOLDER%\..\zef %APPVEYOR_BUILD_FOLDER%\..\zef\bin\zef --deps-only install .
-
-    # Test CompUnit::Repository::Tar
+    # Test it works loaded as a CURFS
     - prove -v -e "perl6 -I." t/
+
+    # Test it can install
+    - perl6 -I %APPVEYOR_BUILD_FOLDER%\..\zef %APPVEYOR_BUILD_FOLDER%\..\zef\bin\zef --/test install .
+
+    # Test it works loaded as a CURI
+    - prove -v -e perl6 t/
 
 shallow_clone: true

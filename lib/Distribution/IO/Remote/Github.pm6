@@ -1,20 +1,25 @@
 use Distribution::IO;
 
+my $API_TOKEN = %*ENV<GITHUB_ACCESS_TOKEN> // '';
+
 sub powershell-webrequest($uri) {
     return Nil unless once { $*DISTRO.is-win && so try run('powershell', '-help', :!out, :!err) };
-    my $content = shell("cmd /c powershell -executionpolicy bypass -command (Invoke-WebRequest -UseBasicParsing -URI $uri).Content", :out).out.slurp(:close);
+    my $header = $API_TOKEN.chars ?? ('-Headers @{"Authorization"="token ' ~ $API_TOKEN ~ '"}') !! '';
+    my $content = shell("cmd /c powershell -executionpolicy bypass -command (Invoke-WebRequest $header -UseBasicParsing -URI $uri).Content", :out).out.slurp(:close);
     return $content;
 }
 
 sub curl($uri) {
     return Nil unless once { so try run('curl', '--help', :!out, :!err) };
-    my $content = run('curl', '--max-time', 60, '-s', '-L', $uri, :out).out.slurp(:close);
+    my $header = $API_TOKEN.chars ?? qq|-H"Authorization: token {$API_TOKEN}"| !! '';
+    my $content = run('curl', $header, '--max-time', 60, '-s', '-L', $uri, :out).out.slurp(:close);
     return $content;
 }
 
 sub wget($uri) {
     return Nil unless once { so try run('wget', '--help', :!out, :!err) };
-    my $content = run('wget', '--timeout=60', '-qO-', $uri, :out).out.slurp(:close);
+    my $header = $API_TOKEN.chars ?? qq|--header="Authorization: token {$API_TOKEN}"| !! '';
+    my $content = run('wget', $API_TOKEN.chars ?? qq|--header="Authorization: token {$API_TOKEN}"| !! (), '--timeout=60', '-qO-', $uri, :out).out.slurp(:close);
     return $content;
 }
 

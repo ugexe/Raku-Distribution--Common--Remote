@@ -14,6 +14,8 @@ This is kept as a separate repo as it requires additional dependencies.
 
 =head3 Synopsis
 
+    BEGIN %*ENV<GITHUB_ACCESS_TOKEN> = "..."; # optional, but useful due to api rate limiting
+
     use Distribution::Common::Remote::Github;
 
     # Distribution::Common::Remote:auth<github:ugexe>

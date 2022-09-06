@@ -11,5 +11,5 @@ class Distribution::Common::Remote::Github {
     has $.api-key;
 
     method new(|c) { self.bless(|c) }
-    submethod BUILD(:$!user, :$!repo, :$!branch = 'master', :$!api-key = %*ENV<GITHUB_ACCESS_TOKEN>) { }
+    submethod BUILD(:$!user, :$!repo, :$!branch = 'main', :$!api-key = %*ENV<GITHUB_ACCESS_TOKEN>) { }
 }

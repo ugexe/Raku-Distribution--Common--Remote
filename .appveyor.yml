@@ -4,7 +4,7 @@ platform: x64
 
 environment:
     GITHUB_ACCESS_TOKEN:
-        secure: 0FS2kEueti8xs9Ekdjz5ZlyZ8fzVVlcDa/qinGe032oZlZYNaZQp5XkuVpFKIP9j
+        secure: EPqbi0m6WbH/4m84G1mHPyrNx4WEygFTQ6xODgdtaWJC1Js62Owlmww0fmexoVEp
 
 install:
     # Enable x64 Native Tools

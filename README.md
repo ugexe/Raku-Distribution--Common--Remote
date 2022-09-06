@@ -14,7 +14,7 @@ This is kept as a separate repo as it requires additional dependencies.
     # Distribution::Common::Remote:auth<github:ugexe>
     my $dist = Distribution::Common::Remote::Github.new(
         user    => "ugexe",
-        repo    => "Perl6-Distribution--Common--Remote",
+        repo    => "Raku-Distribution--Common--Remote",
         branch  => "main"
     );
 

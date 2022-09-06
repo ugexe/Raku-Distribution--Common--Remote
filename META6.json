@@ -11,6 +11,7 @@
         "Distribution::IO::Remote::Github"     : "lib/Distribution/IO/Remote/Github.rakumod"
     },
     "depends"     : [ "Distribution::Common" ],
+    "test-depends"  : [ "Test:ver<6.c+>" ],
     "support"     : {
         "bugtracker" : "https://github.com/ugexe/Raku-Distribution--Common--Remote/issues",
         "source"     : "https://github.com/ugexe/Raku-Distribution--Common--Remote.git"

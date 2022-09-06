@@ -30,14 +30,14 @@ before_install:
 
 install:
     - git clone https://github.com/ugexe/zef $HOME/zef
-    - perl6 -I $HOME/zef $HOME/zef/bin/zef --deps-only install .
+    - raku -I $HOME/zef $HOME/zef/bin/zef --deps-only install .
 
 script:
     # Test it works loaded as a CURFS
-    - prove -v -e 'perl6 -I.' t/
+    - prove -v -e 'raku -I.' t/
 
     # Test it can install
-    - perl6 -I $HOME/zef $HOME/zef/bin/zef --/test install .
+    - raku -I $HOME/zef $HOME/zef/bin/zef --/test install .
 
     # Test it works loaded as a CURI
-    - prove -v -e perl6 t/
+    - prove --ext .rakutest -v -e raku t/

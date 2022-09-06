@@ -8,8 +8,8 @@
     "license"     : "Artistic-2.0",
     "description" : "Create an installable Distribution from common remote sources",
     "provides"    : {
-        "Distribution::Common::Remote::Github" : "lib/Distribution/Common/Remote/Github.pm6",
-        "Distribution::IO::Remote::Github"     : "lib/Distribution/IO/Remote/Github.pm6"
+        "Distribution::Common::Remote::Github" : "lib/Distribution/Common/Remote/Github.rakumod",
+        "Distribution::IO::Remote::Github"     : "lib/Distribution/IO/Remote/Github.rakumod"
     },
     "depends"     : [ "Distribution::Common" ],
     "support"     : {

@@ -26,7 +26,7 @@ This is kept as a separate repo as it requires additional dependencies.
     );
 
     say $dist.meta;
-    say $dist.content('lib/Distribution/Common/Remote.pm6').open.slurp-rest;
+    say $dist.content('lib/Distribution/Common/Remote.rakumod').open.slurp-rest;
 
 =head3 Distribution Implementations
 

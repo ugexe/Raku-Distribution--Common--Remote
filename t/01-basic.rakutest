@@ -1,0 +1,8 @@
+use Test;
+plan 2;
+
+use Distribution::Common::Remote::Github;
+
+my $dist = Distribution::Common::Remote::Github.new(:user("ugexe"), :repo("Raku-Distribution--Common"), :branch("main"));
+is $dist.meta<provides><Distribution::Common>, 'lib/Distribution/Common.rakumod';
+ok $dist.content('lib/Distribution/Common.rakumod').open.slurp-rest.contains('role Distribution::Common');
